@@ -1,12 +1,12 @@
-const removeFromArray = function(array, number) {
+const removeFromArray = function(array, ...theArgs){
     let i = 0;
     let length = array.length-1;
-    let returnArr = [length];
+    var returnArr = new Array(length);
     while (i < length) {
-        if (array[i] === number) {
-            returnArr[i] = array[i+1];
-        } else {
-            returnArr[i] = array[i];
+        for (let j = 0; j < theArgs.length-1; j++) {
+            if (array[i] === theArgs[j]) {
+                returnArr[i] = theArgs[j];
+            }
         }
         i++;
     }
