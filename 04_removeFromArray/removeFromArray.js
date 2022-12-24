@@ -1,17 +1,22 @@
 const removeFromArray = function(array, ...theArgs){
-    let i = 0;
-    let length = array.length-1;
-    var returnArr = new Array(length);
-    while (i < length) {
-        for (let j = 0; j < theArgs.length-1; j++) {
-            if (array[i] === theArgs[j]) {
-                returnArr[i] = theArgs[j];
+    var k = 0;
+    while(k < theArgs.length){
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j <= theArgs.length; j++) {
+                if (theArgs[j]) {
+                    if (theArgs[j] === array[i]) {
+                        array.splice(i,1);
+                    }
+                }
             }
         }
-        i++;
+        k++;
     }
-    return returnArr;
+    return array;
+
+
 };
 
 // Do not edit below this line
 module.exports = removeFromArray;
+
