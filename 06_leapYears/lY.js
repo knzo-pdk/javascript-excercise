@@ -1,7 +1,7 @@
 
 
 function haha(){
-    console.log(1600%4);
+    console.log(1997%4);
 };
 
 haha();
